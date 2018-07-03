@@ -1,0 +1,65 @@
+{
+    "code": 200,
+    "datas": [
+        {
+            "goods": [
+                {
+                    "goods_id": "111111",
+                    "goods_image": "http://pic.58pic.com/58pic/15/62/69/34K58PICbmZ_1024.jpg",
+                    "goods_name": "习近平谈治国理政(第二卷)(平装)",
+                    "goods_num": "1",
+                    "goods_price": "18.00"
+                }
+            ],
+            "store_id": "1",
+            "store_name": "一号小书店"
+        },
+        {
+            "goods": [
+                {
+                    "goods_id": "222221",
+                    "goods_image": "http://file06.16sucai.com/2016/0511/9711205e4c003182edeed83355e6f1c7.jpg",
+                    "goods_name": "马克思传",
+                    "goods_num": "2",
+                    "goods_price": "28.00"
+                },
+                {
+                    "goods_id": "222222",
+                    "goods_image": "http://img01.taopic.com/150424/240473-1504240U13615.jpg",
+                    "goods_name": "我和霍金的生活",
+                    "goods_num": "2",
+                    "goods_price": "228.00"
+                }
+            ],
+            "store_id": "2",
+            "store_name": "二号中书店"
+        },
+        {
+            "goods": [
+                {
+                    "goods_id": "333331",
+                    "goods_image": "http://pic22.nipic.com/20120718/8002769_100147127333_2.jpg",
+                    "goods_name": "心的重建",
+                    "goods_num": "3",
+                    "goods_price": "38.00"
+                },
+                {
+                    "goods_id": "333332",
+                    "goods_image": "http://pic.58pic.com/58pic/14/71/50/40e58PICy54_1024.jpg",
+                    "goods_name": "福尔摩斯",
+                    "goods_num": "3",
+                    "goods_price": "338.00"
+                },
+                {
+                    "goods_id": "333333",
+                    "goods_image": "http://img01.taopic.com/150518/318750-15051PS40671.jpg",
+                    "goods_name": "书法常识",
+                    "goods_num": "3",
+                    "goods_price": "3.80"
+                }
+            ],
+            "store_id": "3",
+            "store_name": "三号大书店"
+        }
+    ]
+}
