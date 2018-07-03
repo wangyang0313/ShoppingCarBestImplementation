@@ -10,3 +10,4 @@ GIF效果图：
     2.初始化数据（含Bean类）：在bean类的DatasBean中新增了isSelect_shop属性，用来判断店铺是否被选中；在GoodsBean中新增了isSelect属性，用来判断商品是否被选中。
     3.初始化ExpandableListView：使用的是ExpandableListView，所以adapter继承BaseExpandableListAdapter，并实现其未实现的方法。
     4.初始化ExpandableListView的数据：初始化了ExpandableListView的数据，并保证数据刷新时，页面保持当前位置。同时也使ExpandableListView的所有组展开，并点击无效果。
+<body spellcheck="0" class="editMode htmledit_views"><pre name="code" class="html">Android 购物车的最佳实现</pre><pre name="code" class="html">Android 购物车的最佳实现</pre><br><br></body>
