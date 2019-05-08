@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
                 //跳出本次循环，继续下次循环。
                 continue;
             } else {
-                datasTemp.add(datas.get(i));
+                datasTemp.add(datas.get(i).clone());
                 datasTemp.get(datasTemp.size() - 1).setGoods(new ArrayList<ShoppingCarDataBean.DatasBean.GoodsBean>());
             }
 

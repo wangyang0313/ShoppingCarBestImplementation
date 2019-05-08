@@ -6,7 +6,7 @@ import java.util.List;
  * 购物车数据的bean类
  */
 
-public class ShoppingCarDataBean {
+public class ShoppingCarDataBean implements Cloneable{
 
     private int code;
     private List<DatasBean> datas;
@@ -27,12 +27,22 @@ public class ShoppingCarDataBean {
         this.datas = datas;
     }
 
-    public static class DatasBean {
+    public static class DatasBean implements Cloneable{
 
         private String store_id;
         private String store_name;
         private boolean isSelect_shop;      //店铺是否在购物车中被选中
         private List<GoodsBean> goods;
+
+        public DatasBean clone() {
+            DatasBean o = null;
+            try {
+                o = (DatasBean) super.clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
+            return o;
+        }
 
         public boolean getIsSelect_shop() {
             return isSelect_shop;
