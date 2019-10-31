@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * 购物车的adapter
@@ -216,20 +216,36 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //创建临时的List，用于存储被选中的商品
-                List<ShoppingCarDataBean.DatasBean.GoodsBean> temp = new ArrayList<>();
+                //创建临时的List，用于存储有商品被选中的店铺
+                List<ShoppingCarDataBean.DatasBean> tempStores = new ArrayList<>();
                 for (int i = 0; i < data.size(); i++) {
-                    List<ShoppingCarDataBean.DatasBean.GoodsBean> goods = data.get(i).getGoods();
+                    //店铺中是否有商品被选中
+                    boolean hasGoodsSelect = false;
+                    //创建临时的List，用于存储被选中的商品
+                    List<ShoppingCarDataBean.DatasBean.GoodsBean> tempGoods = new ArrayList<>();
+
+                    ShoppingCarDataBean.DatasBean storesBean = data.get(i);
+                    List<ShoppingCarDataBean.DatasBean.GoodsBean> goods = storesBean.getGoods();
                     for (int y = 0; y < goods.size(); y++) {
                         ShoppingCarDataBean.DatasBean.GoodsBean goodsBean = goods.get(y);
                         boolean isSelect = goodsBean.getIsSelect();
                         if (isSelect) {
-                            temp.add(goodsBean);
+                            hasGoodsSelect = true;
+                            tempGoods.add(goodsBean);
                         }
+                    }
+
+                    if (hasGoodsSelect) {
+                        ShoppingCarDataBean.DatasBean storeBean = new ShoppingCarDataBean.DatasBean();
+                        storeBean.setStore_id(storesBean.getStore_id());
+                        storeBean.setStore_name(storesBean.getStore_name());
+                        storeBean.setGoods(tempGoods);
+
+                        tempStores.add(storeBean);
                     }
                 }
 
-                if (temp != null && temp.size() > 0) {//如果有被选中的
+                if (tempStores != null && tempStores.size() > 0) {//如果有被选中的
                     /**
                      * 实际开发中，如果有被选中的商品，
                      * 则跳转到确认订单页面，完成后续订单流程。
@@ -258,15 +274,15 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
     }
 
     static class GroupViewHolder {
-        @InjectView(R.id.iv_select)
+        @BindView(R.id.iv_select)
         ImageView ivSelect;
-        @InjectView(R.id.tv_store_name)
+        @BindView(R.id.tv_store_name)
         TextView tvStoreName;
-        @InjectView(R.id.ll)
+        @BindView(R.id.ll)
         LinearLayout ll;
 
         GroupViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 
@@ -415,29 +431,29 @@ public class ShoppingCarAdapter extends BaseExpandableListAdapter {
     }
 
     static class ChildViewHolder {
-        @InjectView(R.id.iv_select)
+        @BindView(R.id.iv_select)
         ImageView ivSelect;
-        @InjectView(R.id.iv_photo)
+        @BindView(R.id.iv_photo)
         ImageView ivPhoto;
-        @InjectView(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView tvName;
-        @InjectView(R.id.tv_price_key)
+        @BindView(R.id.tv_price_key)
         TextView tvPriceKey;
-        @InjectView(R.id.tv_price_value)
+        @BindView(R.id.tv_price_value)
         TextView tvPriceValue;
-        @InjectView(R.id.iv_edit_subtract)
+        @BindView(R.id.iv_edit_subtract)
         ImageView ivEditSubtract;
-        @InjectView(R.id.tv_edit_buy_number)
+        @BindView(R.id.tv_edit_buy_number)
         TextView tvEditBuyNumber;
-        @InjectView(R.id.iv_edit_add)
+        @BindView(R.id.iv_edit_add)
         ImageView ivEditAdd;
-        @InjectView(R.id.view)
+        @BindView(R.id.view)
         View view;
-        @InjectView(R.id.view_last)
+        @BindView(R.id.view_last)
         View viewLast;
 
         ChildViewHolder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 

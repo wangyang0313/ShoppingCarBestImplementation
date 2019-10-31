@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -36,31 +36,31 @@ import butterknife.OnClick;
  */
 public class MainActivity extends AppCompatActivity {
 
-    @InjectView(R.id.tv_titlebar_center)
+    @BindView(R.id.tv_titlebar_center)
     TextView tvTitlebarCenter;
-    @InjectView(R.id.tv_titlebar_right)
+    @BindView(R.id.tv_titlebar_right)
     TextView tvTitlebarRight;
-    @InjectView(R.id.elv_shopping_car)
+    @BindView(R.id.elv_shopping_car)
     ExpandableListView elvShoppingCar;
-    @InjectView(R.id.iv_select_all)
+    @BindView(R.id.iv_select_all)
     ImageView ivSelectAll;
-    @InjectView(R.id.ll_select_all)
+    @BindView(R.id.ll_select_all)
     LinearLayout llSelectAll;
-    @InjectView(R.id.btn_order)
+    @BindView(R.id.btn_order)
     Button btnOrder;
-    @InjectView(R.id.btn_delete)
+    @BindView(R.id.btn_delete)
     Button btnDelete;
-    @InjectView(R.id.tv_total_price)
+    @BindView(R.id.tv_total_price)
     TextView tvTotalPrice;
-    @InjectView(R.id.rl_total_price)
+    @BindView(R.id.rl_total_price)
     RelativeLayout rlTotalPrice;
-    @InjectView(R.id.rl)
+    @BindView(R.id.rl)
     RelativeLayout rl;
-    @InjectView(R.id.iv_no_contant)
+    @BindView(R.id.iv_no_contant)
     ImageView ivNoContant;
-    @InjectView(R.id.rl_no_contant)
+    @BindView(R.id.rl_no_contant)
     RelativeLayout rlNoContant;
-    @InjectView(R.id.tv_titlebar_left)
+    @BindView(R.id.tv_titlebar_left)
     TextView tvTitlebarLeft;
 
     //模拟的购物车数据（实际开发中使用后台返回的数据）
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         context = this;
 
         initExpandableListView();
